@@ -5,7 +5,7 @@ export const FooterWrapper = styled.footer`
     min-height: 11.25rem;
     display: flex;
     justify-content: center;
-    alignt-items: flex-start;
+    align-items: flex-start;
 
     @medias ${props => props.theme.breakpoints.tablet}{
         grid-column: 2 / span 6;
@@ -15,7 +15,7 @@ export const FooterWrapper = styled.footer`
 export const FooterSocialWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    aling-items: center;
+    align-items: center;
     text-align: center;
 
     & p {
