@@ -38,13 +38,13 @@ console.log(data)
 
     // Create single blog posts
 
-    // data.allMdx.edges.forEach(edge => {
-    //     const slug = edge.node.frontmatter.slug
-    //     const id = edge.node.ide
-    //     actions.createPages({
-    //         path: slug,
-    //         component: require.resolve(`./src/templates/singlePost.js`),
-    //         context: {id},
-    //     })
-    // })
+    data.allMdx.edges.forEach(edge => {
+        const slug = edge.node.frontmatter.slug
+        const id = edge.node.ide
+        actions.createPage({
+            path: slug,
+            component: require.resolve(`./src/templates/singlePost.js`),
+            context: {id},
+        })
+    })
 }
