@@ -35,6 +35,6 @@ export const FooterSocialIcons = styled.div`
     }
 
     & img:hover, img:focus {
-        filter: brightness(50%)
+        filter: brightness(50%);
     }
 `
