@@ -87,6 +87,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
 
+      // Create paginated pages for posts
+
+    const postPerPage = 3
+
+    const numPages = Math.ceil(result.data.allMdx.edges.length / postPerPage)
+
+
+    Array.from({ length: numPages}).forEach((_,i) =>{
+        actions.createPage({
+            path: i === 0 ? `/` : `/${i + 1}`,
+            component: path.resolve("./src/templates/allPosts.js"),
+            contex: {
+                limit: postPerPage,
+                skip: i * postPerPage,
+                numPages,
+                currentPage: i +1,
+            }
+        })
+    })
+
+
   // Create blog post pages.
   const posts = result.data.allMdx.edges
   console.log(posts)
