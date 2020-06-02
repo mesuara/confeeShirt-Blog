@@ -6,7 +6,7 @@ import { Container, Post, FeatureImage } from "../components"
 
 const singlePost = ({data}) =>{
     const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
-    
+    console.log(data)
     return (
         <Container>
             <FeatureImage  fixed={featureImage}/>
